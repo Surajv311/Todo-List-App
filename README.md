@@ -9,10 +9,10 @@ You may install:<br>
 ```npm install ejs ```<br>
 ```npm install nodemon```<br>
 
-//* Ensure that nodejs installed in your pc.<br>
-//* The page is deployed on heroku servers.  <br>
-//* To visit : https://whispering-forest-83222.herokuapp.com/
+//*<br>
+//* <br>
+//* 
 
-//![img1](https://github.com/Surajv311/Signup-page-/blob/master/images/1.jpg)<br>
-//![img2](https://github.com/Surajv311/Signup-page-/blob/master/images/2.jpg)<br>
-//![img3](https://github.com/Surajv311/Signup-page-/blob/master/images/3.jpg)<br>
+//!-[img1](https://github.com/Surajv311/Signup-page-/blob/master/images/1.jpg)<br>
+//!-[img2](https://github.com/Surajv311/Signup-page-/blob/master/images/2.jpg)<br>
+//!-[img3](https://github.com/Surajv311/Signup-page-/blob/master/images/3.jpg)<br>
