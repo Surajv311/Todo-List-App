@@ -14,46 +14,47 @@ app.get("/", function(req, res) {
     case 0:
       day = "Sunday";
       break;
-    default:
+
     case 1:
       day = "Monday";
       break;
-    default:
+
     case 2:
       day = "Tuesday";
       break;
-    default:
+
     case 3:
       day = "Wednesday";
       break;
-    default:
+
     case 4:
       day = "Thursday";
       break;
-    default:
+
     case 5:
       day = "Friday";
       break;
-    default:
+
     case 6:
       day = "Saturday";
       break;
     default:
+    console.log("error-> day exceeded")
 
   }
-  if (currentDay === 6 || currentDay === 0) {
-    day = "Weekend";
-    // res.sendFile(__dirname + "/weekend.html");
-    // searching for list.ejs . -> They key value pair foo:FOO is the markdown in the ejs file
+  // if (currentDay === 6 || currentDay === 0) {
+  //   day = "Weekend";
+  //   // res.sendFile(__dirname + "/weekend.html");
+  //   // searching for list.ejs . -> They key value pair foo:FOO is the markdown in the ejs file
+  //
+  // } else {
+  //   day = "Weekday";
+  //   //res.sendFile(__dirname + "/weekday.html");
+  //
+  // }
 
-  } else {
-    day = "Weekday";
-    //res.sendFile(__dirname + "/weekday.html");
-
-  }
-
-  res.render('list', {
-    kindOfDay: 'day'
+  res.render("list", {
+    kindOfDay: day
   }); // kindOfDay in ejs file and day = "Weekend"
 
 
