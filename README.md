@@ -11,8 +11,7 @@ You may install:<br>
 
 //*<br>
 //* <br>
-//* 
 
-//!-[img1](https://github.com/Surajv311/Signup-page-/blob/master/images/1.jpg)<br>
-//!-[img2](https://github.com/Surajv311/Signup-page-/blob/master/images/2.jpg)<br>
-//!-[img3](https://github.com/Surajv311/Signup-page-/blob/master/images/3.jpg)<br>
+
+//![img1](https://github.com/Surajv311/Signup-page-/blob/master/images/1.jpg)<br>
+
