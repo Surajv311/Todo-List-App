@@ -8,9 +8,16 @@
 </head>
 
 <body>
+
+if(kindOfDay ==="Saturday" || kindOfDay === "Sunday"){
+    <!-- we will change the colour of the header if day is saturday or sunday -->
+  <h1 style="color:purple"><%= kindOfDay %> Todo List </h1>
+  }
+  else{
   <!-- We want our header to display the time  -->
   <!-- we have followed the markdown format for ejs -->
-  <h1>Today is <%= kindOfDay %> </h1>
+  <h1><%= kindOfDay %> Todo List </h1>
+}
 </body>
 
 </html>
