@@ -39,7 +39,7 @@ app.get("/", function(req, res) {
       day = "Saturday";
       break;
     default:
-    console.log("error-> day exceeded")
+      console.log("error-> day exceeded")
 
   }
   // if (currentDay === 6 || currentDay === 0) {
