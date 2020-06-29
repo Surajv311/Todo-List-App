@@ -9,18 +9,15 @@ app.get("/", function(req, res) {
 
   var today = new Date(); // a module in js
   // replacing the switch case with js code snippet from stackoverflow
+var options = {
+  weekday: 'long',
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+};
 
-
-
-
-
-
-
-
-
-
-
-
+var day = today.toLocaleDateString("en-US",options)
+// hence now this day is rendered below
 
   res.render("list", {
     kindOfDay: day
