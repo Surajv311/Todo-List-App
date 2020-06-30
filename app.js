@@ -4,7 +4,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 
 const app = express();
-var item ="";
+var items =[];
 app.use(bodyParser.urlencoded({extended:true}))
 app.set('view engine', 'ejs');
 app.get("/", function(req, res) {
@@ -23,7 +23,7 @@ var day = today.toLocaleDateString("en-US",options)
 
   res.render("list", {
     kindOfDay: day,
-    newListItem: item
+    newListItem: items
   }); // kindOfDay in ejs file and day = "Weekend"
 
 // when a post request is triggered on our home route, we'll save the value of newItem
@@ -35,7 +35,8 @@ var day = today.toLocaleDateString("en-US",options)
 });
 
 app.post("/",function(req,res){
-item = req.body.newItem;
+var item = req.body.newItem;
+items.push(item);
 console.log(item);
 // we could have used this(below) but it would throw error
 // res.render("list", {
