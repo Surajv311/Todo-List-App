@@ -4,10 +4,12 @@ const express = require("express");
 const bodyParser = require("body-parser");
 
 const app = express();
+
+app.use(bodyParser.urlencoded({extended:true}))
 app.set('view engine', 'ejs');
 app.get("/", function(req, res) {
 
-  var today = new Date(); // a module in js
+var today = new Date(); // a module in js
   // replacing the switch case with js code snippet from stackoverflow
 var options = {
   weekday: 'long',
@@ -27,6 +29,12 @@ var day = today.toLocaleDateString("en-US",options)
 
   //res.send("Hello");
 });
+
+app.post("/",function(req,res){
+var item = req.body.newItem;
+console.log(item);
+
+})
 
 app.listen(3000, function() {
   console.log("Server started on port 3000.");

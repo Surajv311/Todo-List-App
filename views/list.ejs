@@ -9,11 +9,24 @@
 
 <body>
 
-  <% if(kindOfDay ==="Saturday" || kindOfDay === "Sunday"){ %>
-  <h1 style="color:purple"><%= kindOfDay %> Todo List </h1>
-  <% } else { %>
   <h1><%= kindOfDay %> Todo List </h1>
-  <% } %>
+<ul>
+  <li>eat</li>
+  <li>sleep</li>
+  <li>code</li>
+</ul>
+<!-- We need to add form and then the input we give must be posted on the server -->
+<form class="" action="/" method="post">
+  <input type="text" name="newItem">
+  <button type="submit" name="button"> Add</button>
+</form>
+
+
+
+
+
+
+
 
 </body>
 
