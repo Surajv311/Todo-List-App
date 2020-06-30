@@ -5,7 +5,7 @@ html {
   min-height: 1000px;
   font-family: 'helvetica neue';
 }
-
+/* check other CSS selectors online for more reference */
 h1 {
   color: #fff;
   padding: 10px;
@@ -38,10 +38,12 @@ h1 {
 input:checked+p {
   text-decoration: line-through;
   text-decoration-color: #A683E3;
+  /* modified checked input by +p  */
 }
 
 input[type="checkbox"] {
   margin: 20px;
+  /* as we have two inputs - checkbox and text area */
 }
 
 p {
@@ -86,6 +88,7 @@ input[type="text"]:focus {
 }
 
 ::placeholder {
+  /*(seudo selector used) - targets our placeholder */
   color: grey;
   opacity: 1;
 }
