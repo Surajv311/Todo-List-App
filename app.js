@@ -4,21 +4,21 @@ const express = require("express");
 const bodyParser = require("body-parser");
 
 const app = express();
-var items =[];
+let items =["eat" ,"sleep" ,"code"];
 app.use(bodyParser.urlencoded({extended:true}))
 app.set('view engine', 'ejs');
 app.get("/", function(req, res) {
 
-var today = new Date(); // a module in js
+let today = new Date(); // a module in js
   // replacing the switch case with js code snippet from stackoverflow
-var options = {
+let options = {
   weekday: 'long',
   year: 'numeric',
   month: 'long',
   day: 'numeric'
 };
 
-var day = today.toLocaleDateString("en-US",options)
+let day = today.toLocaleDateString("en-US",options)
 // hence now this day is rendered below
 
   res.render("list", {
@@ -35,7 +35,7 @@ var day = today.toLocaleDateString("en-US",options)
 });
 
 app.post("/",function(req,res){
-var item = req.body.newItem;
+let item = req.body.newItem;
 items.push(item);
 console.log(item);
 // we could have used this(below) but it would throw error
