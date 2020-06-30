@@ -42,7 +42,7 @@ console.log(item);
 // res.render("list", {
 //   newItem: newListItem
 // });
-// hence we redirect it to o=home route and define newListItem there
+// hence we redirect it to home route and define newListItem there
 res.redirect("/");
 
 })
