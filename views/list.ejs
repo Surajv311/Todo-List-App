@@ -14,13 +14,16 @@
   <li>eat</li>
   <li>sleep</li>
   <li>code</li>
+  <li><%=newListItem%></li>
 </ul>
 <!-- We need to add form and then the input we give must be posted on the server -->
 <form class="" action="/" method="post">
   <input type="text" name="newItem">
   <button type="submit" name="button"> Add</button>
 </form>
-
+<!-- So we've now passed the data from our web page to our server but we now need to pass the data back into
+our web page namely into a new list item inside the ul. So we can start doing that by creating a new
+list item and its content is going to be a EJS tag that is going to render a newList item. -->
 
 
 
