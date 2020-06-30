@@ -7,6 +7,7 @@ const app = express();
 let items =["eat" ,"sleep" ,"code"];
 app.use(bodyParser.urlencoded({extended:true}))
 app.set('view engine', 'ejs');
+app.use(express.static("public"));
 app.get("/", function(req, res) {
 
 let today = new Date(); // a module in js
