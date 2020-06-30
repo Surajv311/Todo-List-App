@@ -5,11 +5,14 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="css/styles.css">
-  <!-- Now when you use Express, it doesn't automatically serve up all 
+  <!-- Now when you use Express, it doesn't automatically serve up all
   the files in your project.In fact it only serves up the
   main access point which we define in our packag.json as app.js
   and it also serves up the views folder.But everything else
-  it chooses to ignore.Hence the css won't run as of now. -->
+  it chooses to ignore.Hence the css won't run as of now.
+  In order to access the CSS for our website we have to tell
+  Express explicitly to serve up the CSS files. 
+  And we need to tell it the location of our file and tell it to use it. -->
   <title>ToDo List</title>
 </head>
 
