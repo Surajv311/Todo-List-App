@@ -11,29 +11,31 @@
   and it also serves up the views folder.But everything else
   it chooses to ignore.Hence the css won't run as of now.
   In order to access the CSS for our website we have to tell
-  Express explicitly to serve up the CSS files. 
+  Express explicitly to serve up the CSS files.
   And we need to tell it the location of our file and tell it to use it. -->
   <title>ToDo List</title>
 </head>
 
 <body>
+  <div class="box" id="heading">
+    <!-- adding class and id as per our css-->
+    <h1><%= kindOfDay %> Todo List </h1>
+  </div>
+  <div class="box">
+    <% for(var i=0; i <newListItems.length; i++){ %>
+    <div class="item">
+      <input type="checkbox" name="" value="">
+      <p> <%= newListItems[i] %> </p>
+    </div>
+    <% } %>
+  </div>
 
-  <h1><%= kindOfDay %> Todo List </h1>
-<ul>
-  <!-- <li>eat</li>
-  <li>sleep</li>
-  <li>code</li> -->
-  <% for(var i=0; i <newListItems.length; i++){ %>
-  <li> <%= newListItems[i] %> </li>
-   <% } %>
-  <!-- but we need to add notes in bullets so we have to add a for loop -->
-</ul>
-<!-- We need to add form and then the input we give must be posted on the server -->
-<form class="" action="/" method="post">
-  <input type="text" name="newItem">
-  <button type="submit" name="button"> Add</button>
-</form>
-<!-- So we've now passed the data from our web page to our server but we now need to pass the data back into
+  <!-- We need to add form and then the input we give must be posted on the server -->
+  <form class="" action="/" method="post">
+    <input type="text" name="newItem">
+    <button type="submit" name="button"> Add</button>
+  </form>
+  <!-- So we've now passed the data from our web page to our server but we now need to pass the data back into
 our web page namely into a new list item inside the ul. So we can start doing that by creating a new
 list item and its content is going to be a EJS tag that is going to render a newList item. -->
 
