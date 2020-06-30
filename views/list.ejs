@@ -11,10 +11,12 @@
 
   <h1><%= kindOfDay %> Todo List </h1>
 <ul>
-  <li>eat</li>
+  <!-- <li>eat</li>
   <li>sleep</li>
-  <li>code</li>
-  <li><%=newListItem%></li>
+  <li>code</li> -->
+  <% for(var i=0; i <newListItems.length; i++){ %>
+  <li> <%= newListItems[i] %> </li>
+   <% } %>
   <!-- but we need to add notes in bullets so we have to add a for loop -->
 </ul>
 <!-- We need to add form and then the input we give must be posted on the server -->

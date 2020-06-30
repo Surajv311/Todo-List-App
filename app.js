@@ -23,7 +23,7 @@ var day = today.toLocaleDateString("en-US",options)
 
   res.render("list", {
     kindOfDay: day,
-    newListItem: items
+    newListItems: items
   }); // kindOfDay in ejs file and day = "Weekend"
 
 // when a post request is triggered on our home route, we'll save the value of newItem
