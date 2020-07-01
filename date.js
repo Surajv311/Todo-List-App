@@ -2,7 +2,7 @@
 // module.exports is a js object
 //module.exports = "exported date.js";
 // now we can display a string but we want to pass our function so :
-module.exports = getDate // we would add the parenthesis in our app.js file
+module.exports.getDate = getDate // we would add the parenthesis in our app.js file
 function getDate(){
 let today = new Date(); // a module in js
 let options = {
