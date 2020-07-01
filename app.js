@@ -11,29 +11,14 @@ app.set('view engine', 'ejs');
 app.use(express.static("public"));
 app.get("/", function(req, res) {
 
-let today = new Date(); // a module in js
-  // replacing the switch case with js code snippet from stackoverflow
-let options = {
-  weekday: 'long',
-  year: 'numeric',
-  month: 'long',
-  day: 'numeric'
-};
 
-let day = today.toLocaleDateString("en-US",options);
-// hence now this day is rendered below
 
   res.render("list", {
     listTitle: day,
     newListItems: items
-  }); // kindOfDay in ejs file and day = "Weekend"
+  });
 
-// when a post request is triggered on our home route, we'll save the value of newItem
-// in that text box to a variable called item and it will redirect to the home route which then
-// gets us over here and triggers the app.get for our home route.
-// And it will res.render the list template passing in both the kindOfDay as well as the newList
 
-  //res.send("Hello");
 });
 
 app.post("/",function(req,res){
@@ -47,14 +32,6 @@ app.post("/",function(req,res){
     res.redirect("/");
     // console.log(item);
   }
-
-// we could have used this(below) but it would throw error
-// res.render("list", {
-//   newItem: newListItem
-// });
-// hence we redirect it to home route and define newListItem there
-//res.redirect("/");
-
 });
 
 app.get("/work",function(req,res){
