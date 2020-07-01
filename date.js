@@ -1,6 +1,6 @@
 //jshint esversion:6
 
-module.exports.getDate = function(){
+exports.getDate = function(){
 let today = new Date(); // a module in js
 let options = {
   weekday: 'long',
@@ -12,7 +12,7 @@ let options = {
 
 }
 
-module.exports.getDay = function(){
+exports.getDay = function(){
 let today = new Date(); // a module in js
 let options = {
   weekday: 'long',
