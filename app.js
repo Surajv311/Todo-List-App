@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({extended:true}))
 app.set('view engine', 'ejs');
 app.use(express.static("public"));
 app.get("/", function(req, res) {
-
+ 
 const day = date.getDate() ;
 
   res.render("list", {

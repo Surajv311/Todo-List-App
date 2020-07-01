@@ -5,7 +5,7 @@ const today = new Date(); // a module in js
 const options = {
   weekday: 'long',
   year: 'numeric',
-  month: 'long',
+  month: 'long', 
   day: 'numeric'};
 
   return today.toLocaleDateString("en-US",options);
