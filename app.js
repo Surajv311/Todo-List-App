@@ -20,7 +20,7 @@ let options = {
   day: 'numeric'
 };
 
-let day = today.toLocaleDateString("en-US",options)
+let day = today.toLocaleDateString("en-US",options);
 // hence now this day is rendered below
 
   res.render("list", {
@@ -37,21 +37,29 @@ let day = today.toLocaleDateString("en-US",options)
 });
 
 app.post("/",function(req,res){
-let item = req.body.newItem;
-items.push(item);
-console.log(item);
+  let item = req.body.newItem;
+  // console.log(req.body);
+  if(req.body.list === "Work"){
+    workItems.push(item);
+    res.redirect("/work");
+  } else{
+    items.push(item);
+    res.redirect("/");
+    // console.log(item);
+  }
+
 // we could have used this(below) but it would throw error
 // res.render("list", {
 //   newItem: newListItem
 // });
 // hence we redirect it to home route and define newListItem there
-res.redirect("/");
+//res.redirect("/");
 
-})
+});
 
 app.get("/work",function(req,res){
-  res.render("list",{listTitle:"Work List" ,newListItems : workItems })
-})
+  res.render("list",{listTitle:"Work List" ,newListItems : workItems });
+});
 app.post("/work",function(req,res){
 let item = res.body.newItem;
 workItems.push(newItem);
