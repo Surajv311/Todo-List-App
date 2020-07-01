@@ -3,8 +3,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const date = require(__dirname + '/date.js');
-console.log(date)
-
+//console.log(date()) // we have added our parenthesis here
+// now we can add the module as 'day' in below code
 const app = express();
 let items =["eat" ,"sleep" ,"code"];
 let workItems = [];
@@ -13,7 +13,7 @@ app.set('view engine', 'ejs');
 app.use(express.static("public"));
 app.get("/", function(req, res) {
 
-
+let day = date() ;
 
   res.render("list", {
     listTitle: day,
