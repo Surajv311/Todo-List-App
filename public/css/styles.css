@@ -1,9 +1,9 @@
 html {
-  background-color: #E4E9FD;
-  background-image: -webkit-linear-gradient(65deg, #A683E3 50%, #E4E9FD 50%);
-  /* we have added 50% gradient of both colours */
+  background-color: white;
+  background-image: -webkit-linear-gradient(20deg, #0f35a8 20%, #a8beff 60%);
+  /* we have added 20% and 60% gradient of both colours */
   min-height: 1000px;
-  font-family: 'helvetica neue';
+font-family: 'Ubuntu', sans-serif;
 }
 /* check other CSS selectors online for more reference */
 h1 {
@@ -12,15 +12,15 @@ h1 {
 }
 
 .box {
-  max-width: 400px;
+  max-width: 600px;
   margin: 50px auto;
   background: white;
-  border-radius: 5px;
+  border-radius: 10px;
   box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
 }
 
 #heading {
-  background-color: #A683E3;
+  background-color: #393d40;
   text-align: center;
 }
 
@@ -37,7 +37,7 @@ h1 {
 
 input:checked+p {
   text-decoration: line-through;
-  text-decoration-color: #A683E3;
+  text-decoration-color: #f50000;
   /* modified checked input by +p  */
 }
 
@@ -64,8 +64,8 @@ button {
   width: 50px;
   border-radius: 50%;
   border-color: transparent;
-  background-color: #A683E3;
-  color: #fff;
+  background-color: #219609;
+  color: white;
   font-size: 30px;
   padding-bottom: 6px;
   border-width: 0;
