@@ -23,7 +23,7 @@ let day = today.toLocaleDateString("en-US",options)
 // hence now this day is rendered below
 
   res.render("list", {
-    kindOfDay: day,
+    listTitle: day,
     newListItems: items
   }); // kindOfDay in ejs file and day = "Weekend"
 
