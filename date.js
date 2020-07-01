@@ -1,8 +1,8 @@
 //jshint esversion:6
 
 exports.getDate = function(){
-let today = new Date(); // a module in js
-let options = {
+const today = new Date(); // a module in js
+const options = {
   weekday: 'long',
   year: 'numeric',
   month: 'long',
@@ -13,8 +13,8 @@ let options = {
 }
 
 exports.getDay = function(){
-let today = new Date(); // a module in js
-let options = {
+const today = new Date(); // a module in js
+const options = {
   weekday: 'long',
 };
 

@@ -6,14 +6,14 @@ const date = require(__dirname + '/date.js');
 //console.log(date()) // we have added our parenthesis here
 // now we can add the module as 'day' in below code
 const app = express();
-let items =["eat" ,"sleep" ,"code"];
-let workItems = [];
+const items =["eat" ,"sleep" ,"code"];
+const workItems = [];
 app.use(bodyParser.urlencoded({extended:true}))
 app.set('view engine', 'ejs');
 app.use(express.static("public"));
 app.get("/", function(req, res) {
 
-let day = date.getDate() ;
+const day = date.getDate() ;
 
   res.render("list", {
     listTitle: day,
@@ -24,7 +24,7 @@ let day = date.getDate() ;
 });
 
 app.post("/",function(req,res){
-  let item = req.body.newItem;
+  const item = req.body.newItem;
   // console.log(req.body);
   if(req.body.list === "Work"){
     workItems.push(item);
