@@ -1,4 +1,4 @@
-# Todo List App (update-1)<br>
+# Todo List App (upgrade-1)<br>
 An updated version of the todo-list app created earlier <br>
 
 Before cloning and running the project ensure that you have the necessary libraries and node.js <br>
