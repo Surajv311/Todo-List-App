@@ -13,9 +13,15 @@ app.use(bodyParser.urlencoded({extended:true}))
 app.set('view engine', 'ejs');
 app.use(express.static("public"));
 
-// to connect to our mongodb server 
+// to connect to our mongodb server
 mongoose.connect("mongodb://localhost:27017/todolistDB",{useNewUrlParser: true});
 
+// creating schema
+
+const itemsSchema = {
+  name : String
+};
+const Item = mongoose.model("Item" , itemsSchema);
 
 app.get("/", function(req, res) {
 
