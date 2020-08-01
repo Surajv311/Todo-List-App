@@ -3,16 +3,22 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const date = require(__dirname + '/date.js');
-//console.log(date()) // we have added our parenthesis here
-// now we can add the module as 'day' in below code
+
+const mongoose = require("mongoose");
+
 const app = express();
 const items =["eat" ,"sleep" ,"code"];
 const workItems = [];
 app.use(bodyParser.urlencoded({extended:true}))
 app.set('view engine', 'ejs');
 app.use(express.static("public"));
+
+// to connect to our mongodb server 
+mongoose.connect("mongodb://localhost:27017/todolistDB",{useNewUrlParser: true});
+
+
 app.get("/", function(req, res) {
- 
+
 const day = date.getDate() ;
 
   res.render("list", {
