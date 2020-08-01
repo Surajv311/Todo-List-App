@@ -2,7 +2,7 @@
 // using ejs templates
 const express = require("express");
 const bodyParser = require("body-parser");
-const date = require(__dirname + '/date.js');
+//const date = require(__dirname + '/date.js');
 
 const mongoose = require("mongoose");
 
@@ -25,7 +25,7 @@ const Item = mongoose.model("Item" , itemsSchema);
 
 app.get("/", function(req, res) {
 
-const day = date.getDate() ;
+//const day = date.getDate() ;
 
   res.render("list", {
     listTitle: day,
