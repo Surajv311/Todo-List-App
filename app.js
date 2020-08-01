@@ -35,13 +35,22 @@ const item4 = new Item({
   name : "repeat"
 });
 
+const defaultItems = [item1 , item2 , item3];
+Item.insertMany(defaultItems , function(err){
+  if(err){
+    console.log(err);
+  }
+  else{
+    console.log("running");
+  }
+});
 
 app.get("/", function(req, res) {
 
 //const day = date.getDate() ;
 
   res.render("list", {
-    listTitle: "Today",
+    listTitle: "Today's",
     newListItems: items
   });
 
