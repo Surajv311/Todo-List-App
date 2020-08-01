@@ -22,6 +22,19 @@ const itemsSchema = {
   name : String
 };
 const Item = mongoose.model("Item" , itemsSchema);
+const item1 = new Item({
+  name : "welcome"
+});
+const item2 = new Item({
+  name : "code"
+});
+const item3 = new Item({
+  name : "coffee"
+});
+const item4 = new Item({
+  name : "repeat"
+});
+
 
 app.get("/", function(req, res) {
 
