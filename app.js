@@ -28,7 +28,7 @@ app.get("/", function(req, res) {
 //const day = date.getDate() ;
 
   res.render("list", {
-    listTitle: day,
+    listTitle: "Today",
     newListItems: items
   });
 
