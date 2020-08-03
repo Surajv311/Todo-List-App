@@ -48,11 +48,16 @@ Item.insertMany(defaultItems , function(err){
 app.get("/", function(req, res) {
 
 //const day = date.getDate() ;
+// now to find items
 
-  res.render("list", {
-    listTitle: "Today's",
-    newListItems: items
-  });
+Item.find({} , function(err , foundItems){
+//console.log(foundItems);
+res.render("list", {
+  listTitle: "Today's",
+  newListItems: foundItems
+});// but it would print many items as insertMany fun()
+
+})
 
 
 });
