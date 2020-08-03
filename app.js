@@ -36,43 +36,56 @@ const item4 = new Item({
 });
 
 const defaultItems = [item1 , item2 , item3];
-Item.insertMany(defaultItems , function(err){
-  if(err){
-    console.log(err);
-  }
-  else{
-    console.log("running");
-  }
-});
+
+// we can't simply comment out the insertMany after running server once
+// imagine if hosted on a remote server it wouldn't be possible
+// we have dropped our DB now & would restart with clean DB
+
 
 app.get("/", function(req, res) {
 
-//const day = date.getDate() ;
+
+
 // now to find items
 
 Item.find({} , function(err , foundItems){
 //console.log(foundItems);
-res.render("list", {
-  listTitle: "Today's",
-  newListItems: foundItems
-});// but it would print many items as insertMany fun()
+if(foundItems.length===0){
+  // if there are no items in the DB then only we would insertMany
 
-})
+  Item.insertMany(defaultItems , function(err){
+    if(err){
+      console.log(err);
+    }
+    else{
+      console.log("running");
+    }
+  });
+res.redirect("/");
+}
+
+else{
+  res.render("list", {
+    listTitle: "Today's",
+    newListItems: foundItems
+  });// but it would print many items as insertMany fun()
+
+}
+
+});
 
 
 });
 
 app.post("/",function(req,res){
-  const item = req.body.newItem;
-  // console.log(req.body);
-  if(req.body.list === "Work"){
-    workItems.push(item);
-    res.redirect("/work");
-  } else{
-    items.push(item);
-    res.redirect("/");
-    // console.log(item);
-  }
+  const itemName = req.body.newItem;
+// now we'll use mongodb to pass
+const item  = new Item({
+  name : itemName
+});
+item.save()
+res.redirect("/");
+
 });
 
 app.get("/work",function(req,res){
