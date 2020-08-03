@@ -114,12 +114,25 @@ res.redirect("/" + customListName);
 
 app.post("/",function(req,res){
   const itemName = req.body.newItem;
+  const listName = req.body.list;
 // now we'll use mongodb to pass
 const item  = new Item({
   name : itemName
 });
+if(listName ==="Today's"){
+
 item.save()
 res.redirect("/");
+}
+else{
+  List.findOne({name:listName} , function(err , foundList){
+
+foundList.items.push(item);
+foundList.save();
+res.redirect("/" + listName);
+
+  })
+}
 
 });
 
