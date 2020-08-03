@@ -139,17 +139,26 @@ res.redirect("/" + listName);
 app.post("/delete" , function(req,res){
 
   const checkedItemId = req.body.checkbox;
+  const listName = req.body.listName;
+
+if(listName==="Today's"){
+
 Item.findByIdAndRemove(checkedItemId , function(err){
 if(!err){
   console.log("deleted");
   res.redirect("/");
 }
+});
+}
+else{
+  List.findOneAndUpdate({name : listName} , {$pull: {items: {_id : checkedItemId}}} , function(err , foundList){
+if(!err){
+  res.redirect("/" + listName);
+}
+});
 
-
-})
-
-})
-
+  }
+});
 
 app.get("/work",function(req,res){
   res.render("list",{listTitle:"Work List" ,newListItems : workItems });
