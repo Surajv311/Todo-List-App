@@ -13,7 +13,7 @@
 <!-- we must submit the form .. checkbox & not using submit button -->
     <form class="" action="/delete" method="post">
       <div class="item">
-        <input type="checkbox" name="" value="">
+        <input type="checkbox" onChange="this.form.submit()" name="checkbox" value="">
         <p> <%= item.name %> </p>
       </div>
     </form>
