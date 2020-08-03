@@ -90,7 +90,16 @@ res.redirect("/");
 
 app.post("/delete" , function(req,res){
 
-  console.log(req.body);
+  const checkedItemId = req.body.checkbox;
+Item.findByIdAndRemove(checkedItemId , function(err){
+if(!err){
+  console.log("deleted");
+  res.redirect("/");
+}
+
+
+})
+
 })
 
 
