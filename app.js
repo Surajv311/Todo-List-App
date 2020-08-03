@@ -90,13 +90,25 @@ else{
 // route parameters
 app.get("/:customListName" , function(req , res){
 const customListName = req.params.customListName;
-
-
+List.findOne({name: customListName} , function(err , foundList){
+if(!err){
+  if(!foundList){
+  // console.log("error");}
+// create a new list
 const list = new List({
   name :customListName,
   items: defaultItems
 });
-list.save()
+list.save();
+res.redirect("/" + customListName);
+}
+  else{
+    // console.log("working");
+    res.render("list" , {listTitle : foundList.name , newListItems : foundList.items});
+  }
+}
+});
+
 
 });
 
