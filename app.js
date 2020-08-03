@@ -21,6 +21,16 @@ mongoose.connect("mongodb://localhost:27017/todolistDB",{useNewUrlParser: true})
 const itemsSchema = {
   name : String
 };
+
+// new schema
+const listSchema = {
+
+  name : String,
+  items : [itemsSchema]
+};
+
+const List = mongoose.model("List" , listSchema);
+
 const Item = mongoose.model("Item" , itemsSchema);
 const item1 = new Item({
   name : "welcome"
@@ -79,7 +89,14 @@ else{
 
 // route parameters
 app.get("/:customListName" , function(req , res){
-console.log(req.params.customListName);
+const customListName = req.params.customListName;
+
+
+const list = new List({
+  name :customListName,
+  items: defaultItems
+});
+list.save()
 
 });
 
