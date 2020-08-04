@@ -1,5 +1,5 @@
 //jshint esversion:6
-// using ejs templates
+
 const express = require("express");
 const bodyParser = require("body-parser");
 //const date = require(__dirname + '/date.js');
@@ -46,11 +46,6 @@ const item4 = new Item({
 });
 
 const defaultItems = [item1 , item2 , item3];
-
-// we can't simply comment out the insertMany after running server once
-// imagine if hosted on a remote server it wouldn't be possible
-// we have dropped our DB now & would restart with clean DB
-
 
 app.get("/", function(req, res) {
 
