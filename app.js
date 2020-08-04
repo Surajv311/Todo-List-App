@@ -14,7 +14,7 @@ app.set('view engine', 'ejs');
 app.use(express.static("public"));
 
 // to connect to our mongodb server
-mongoose.connect("mongodb://localhost:27017/todolistDB",{useNewUrlParser: true});
+mongoose.connect("mongodb+srv://admin-surajv:mongoDB1@cluster0.iroid.mongodb.net/todolistDB",{useNewUrlParser: true});
 
 // creating schema
 
@@ -169,6 +169,13 @@ workItems.push(newItem);
 res.redirect("/work")
 
 })
-app.listen(3000, function() {
-  console.log("Server started on port 3000.");
+
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
+
+
+app.listen(port, function() {
+  console.log("Server running");
 });
