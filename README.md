@@ -19,4 +19,4 @@ To run the app remotely : <br>
 
 ![img1](https://github.com/Surajv311/Todo-List-updated/blob/master/images/1.jpg)<br>
 
-![img2](https://github.com/Surajv311/Todo-List-updated/blob/master/images/1upd.jpg)<br>
+<!--![img2](https://github.com/Surajv311/Todo-List-updated/blob/master/images/1upd.jpg)<br> -->
